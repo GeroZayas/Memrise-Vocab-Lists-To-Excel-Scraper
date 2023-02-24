@@ -41,7 +41,6 @@ def extract_vocab(link):
     print(CURRENT_PATH)
 
     for time in range(LEVELS):
-
         counter_level += 1
 
         # ***** Progress Bar *****
@@ -88,12 +87,17 @@ def extract_vocab(link):
         elif ":" in course_name_string:
             course_name_string = course_name_string.replace(":", "-")
 
-        if not os.path.exists(CURRENT_PATH + f"\{course_name_string}"):
-            os.makedirs(f"{course_name_string}")
+        if not os.path.exists(
+            CURRENT_PATH + f"Downloaded_Courses/{course_name_string}"
+        ):
+            try:
+                os.makedirs(f"Downloaded_Courses/{course_name_string}")
+            except FileExistsError:
+                pass
 
         # Create a workbook and add a worksheet.
         workbook = xlsxwriter.Workbook(
-            f"{course_name_string}/{course_name_string}_{counter_level}.xlsx"
+            f"Downloaded_Courses/{course_name_string}/{course_name_string}_{counter_level}.xlsx"
         )
         worksheet = workbook.add_worksheet()
 
@@ -113,6 +117,10 @@ def extract_vocab(link):
 
 
 if __name__ == "__main__":
+    import time
+
     link = input("Insert Valid Memrise Course Link: ")
 
     extract_vocab(link=link)
+
+    time.sleep(3)
