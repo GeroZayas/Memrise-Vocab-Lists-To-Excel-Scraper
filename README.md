@@ -1,7 +1,7 @@
 # Memrise-Vocab-Lists-To-Excel-Scraper
 
 ## Scrape Memrise Vocabulary Lists to Excel CLI
----> [LINK to code](https://github.com/GeroZayas/Memrise-Vocab-Lists-To-Excel-Scraper) <---
+---> [LINK to code](https://github.com/GeroZayas/Memrise-Vocab-Lists-To-Excel-Scraper/blob/master/Extract_Vocab_From_Memrise_Courses_To_Excel.py) <---
 
 A CLI program to scrape Vocabulary Lists from **Memrise.com** and save them as Excel Files for learning languages.
 
